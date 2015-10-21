@@ -39,7 +39,10 @@ def main():
             else:
                 lastdays += int(datetime(y, 12, 31).strftime("%j"))
 
-    print '退伍剩下{:03d}天'.format(lastdays)
+    if lastdays < 0:
+        print '已經退伍了喔！'
+    else:
+        print '退伍剩下{:03d}天'.format(lastdays)
 
 
 if __name__ == '__main__':

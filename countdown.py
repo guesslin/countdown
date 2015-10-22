@@ -27,7 +27,6 @@ def main():
     cdays = int(current.strftime("%j"))
     if cyear > tyear:
         print '已經退伍了喔！'
-        return
     elif cyear == tyear:
         lastdays = tdays - cdays
     else:
@@ -39,7 +38,7 @@ def main():
             else:
                 lastdays += int(datetime(y, 12, 31).strftime("%j"))
 
-    if lastdays < 0:
+    if lastdays <= 0:
         print '已經退伍了喔！'
     else:
         print '退伍剩下{:03d}天'.format(lastdays)
